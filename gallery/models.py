@@ -9,7 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from filebrowser.fields import FileBrowseField
 from tinymce.models import HTMLField
 
-from common.models import SEOModel, VisibleObject
+from website.models import SEOModel, VisibleObject
 
 from managers import GalleryImageFBManager
 
