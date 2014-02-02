@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Страница не найдена{% endblock %}
+
+{% block extra_css %}
+	<link href="{{ STATIC_URL }}css/error/error.css" rel="stylesheet" type="text/css" />
+{% endblock extra_css %}
+
+{% block extracontent %}
+	<div class="error">
+		<div class="error__wrapper">
+			<div class="error__inner">
+				<div class="error__title">Ошибка 404 — Страница не найдена.</div>
+				<div class="error__text">Адрес страницы введен не правильно либо страница больше не существует.</div>
+				<div class="error__text">Попробуйте <a href="/" class="error__link">начать с главной страницы</a></div>
+			</div>
+		</div>
+	</div>
+{% endblock extracontent %}
+
+{% block content %}{% endblock content %}
+{% block popup %}{% endblock popup %}

@@ -1,0 +1,14 @@
+django==1.5.5
+django_compressor
+django-filebrowser
+django_grappelli==2.4.8
+django-mptt
+django-tinymce
+django-widget-tweaks
+django-mptt-admin
+django-debug-toolbar
+
+south
+pillow
+
+git+https://github.com/mr-africa/supercaptcha.git

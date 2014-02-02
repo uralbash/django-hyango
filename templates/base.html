@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!--[if IE 8]>
+		<link href="{{ STATIC_URL }}css/ie/ie8.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 7]>
+		<link href="{{ STATIC_URL }}css/ie/ie7.css" rel="stylesheet" type="text/css" />
+		<link href="{{ STATIC_URL }}css/ie/normalize_v1" rel="stylesheet" type="text/css" />
+	<![endif]-->
+	<!--[if IE 6]>
+		<link href="{{ STATIC_URL }}css/ie/ie6.css" rel="stylesheet" type="text/css" />
+		<link href="{{ STATIC_URL }}css/ie/normalize_v1" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+	{% block extrahead %}
+	{% endblock extrahead %}
+</head>
+<body>
+	{% csrf_token %}
+
+	{% block popup %}
+		<div class="popup">
+			<div class="popup-background">&nbsp;</div>
+			<div class="popup-inner">
+				<div class="popup-inner__ie">
+					<div class="popup-inner__content">
+						<a href="#" class="popup-inner__content-link">
+							<span class="popup-inner__content-link-text">закрыть</span>
+						</a>
+						<div class="popup-inner__content-content">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endblock popup %}
+
+	<div class="wrapper">
+		<div class="wrapper__inner">
+			<div class="header clear-after">
+				<div class="header__logo">
+					<a href="/" class="header__logo-link">
+						<img src="{{ STATIC_URL }}img/logo.png" class="header__logo-link-image" alt="" title="" />
+					</a>
+				</div>
+				<div class="header__menu">
+					<div class="menu">
+						<ul class="menu-list">
+							<li class="menu-list__item">
+								<a href="#" class="menu-list__item-link">О компании</a>
+							</li>
+							<li class="menu-list__item">
+								<a href="#" class="menu-list__item-link">Клиенты</a>
+							</li>
+							<li class="menu-list__item">
+								<a href="#" class="menu-list__item-link">База знаний</a>
+							</li>
+							<li class="menu-list__item">
+								<a href="#" class="menu-list__item-link">Пресс-служба</a>
+							</li>
+							<li class="menu-list__item">
+								<a href="#" class="menu-list__item-link">Контактная информация</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="page clear-after">
+				{% block content %}
+				{% endblock content %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

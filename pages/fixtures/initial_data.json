@@ -1,0 +1,23 @@
+[
+    {
+        "pk": 1,
+        "model": "pages.page",
+        "fields": {
+            "name": "Главная страница",
+            "url": "/",
+            "path": "/",
+            "parent": null,
+            "redirect_to": null,
+            "content": null,
+            "visible": true,
+            "lock": true,
+            "in_header": false,
+            "seo_title": "Главная страница",
+            "seo_meta": null,
+            "rght": 2,
+            "tree_id": 1,
+            "lft": 1,
+            "level": 0
+        }
+    }
+]

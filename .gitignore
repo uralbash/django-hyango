@@ -1,0 +1,18 @@
+# .htaccess
+.htaccess
+
+# Shell files
+*.bat
+*.sh
+
+# Trash
+/cache
+/node_modules
+/tmp
+/CACHE
+*.py[co]
+*.bat
+*.sh
+*.sublime-*
+*.pyc
+*.swp

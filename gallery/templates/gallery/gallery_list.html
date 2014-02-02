@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load fb_versions %}
+
+{% block content %}
+<div class="b-page  b-clear-after">
+  <div class="b-page__inner">
+    <div class="b-page__title">Фотогалерея</div>
+    <div class="b-gallery">
+      {% for gallery in galleries %}
+      <div class="b-gallery__item">
+        <div class="b-gallery__item-inner">
+          <a href="{{ gallery.get_absolute_url }}" class="b-gallery__item-link">
+            {% with image=gallery.get_first_image %}
+            <span class="b-gallery__item-image">
+              <img src="{% version image 'gallery_thumb' %}" alt="{{ gallery.name }}" class="b-gallery__item-image-image">
+            </span>
+            {% endwith %}
+            <span class="b-gallery__item-link-text">{{ gallery.name }}</span>
+            <span class="b-gallery__item-desc">{{ gallery.description_short|default:'' }}</span>
+            <span class="b-gallery__item-count">Количество: {{ gallery.get_images_count }}</span>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% include 'include/paginator.html' %}
+  </div>
+</div>
+{% endblock content %}

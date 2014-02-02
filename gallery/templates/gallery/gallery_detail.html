@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load fb_versions %}
+
+{% block popup %}
+    <div class="i-popup">
+        <div class="i-popup-background">&nbsp;</div>
+        <div class="i-popup-inner">
+            <div class="i-popup-inner-ie">
+                <div class="i-popup-content">
+                    <a href="#" class="i-popup-content__link">
+                        <span class="i-popup-content__link-text">закрыть</span>
+                    </a>
+                    <div class="i-popup-content__gallery b-clear-after">
+                        <div id="fotorama_popup"></div>
+                        <div class="i-popup-content__gallery-desc">&nbsp;</div>
+                        <div class="i-popup-content__gallery-count">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock popup %}
+
+{% block content %}
+    <div class="b-page  b-clear-after">
+        <div class="b-page__inner">
+            <div class="b-page__title">
+                <a href="{% url 'gallery_list' %}" class="b-page__title-link">Фотогалерея</a> — {{ gallery.name }}
+            </div>
+            <div class="b-page__content">
+                {{ gallery.description|default:""|safe }}
+                <div class="b-gallery b-gallery_type_list b-clear-after" data-url="{% url 'gallery_images_json' gallery.pk %}">
+                    {% for image in images %}
+                        {% if gallery.directory %}
+                            {% version_object image 'gallery_list_image' as image_vo %}
+                        {% else %}
+                            {% version_object image.image 'medium' as image_vo %}
+                        {% endif %}
+                        <div class="b-gallery__item">
+                            {% with filename=image.filename %}
+                                <a class="b-gallery__item-link" href="{{ image_vo.url }}" data-fotorama-id="img-{{ gallery.pk }}-{{ image.pk|default:filename }}">
+                            {% endwith %}
+                                    <img src="{{ image_vo.url }}" alt="{{ image.description }}" class="b-gallery__item-image"/>
+                                </a>
+                        </div>
+                    {% endfor %}
+                </div>
+                {% include 'include/paginator.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block extra_js %}
+   <script src="{{ STATIC_URL }}gallery/js/gallery.js" type="text/javascript" charset="utf-8"></script>
+{% endblock extra_js %}

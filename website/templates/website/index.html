@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load fb_versions %}
+
+{% block content %}
+	<div class="customer">
+		<div class="customer__title">Наши клиенты</div>
+		<div class="customer-logos">&nbsp;</div>
+	</div>
+
+	<div class="b-page">
+		<div class="b-page__left">
+			{{ request.page.content|default:""|safe }}
+		</div>
+		<div class="b-page__right">
+			{{ foo }}
+		</div>
+	</div>
+{% endblock content %}

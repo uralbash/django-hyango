@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index,follow" />
+	<meta name="robots" content="noyaca" />
+	<meta name="google-site-verification" content="" />
+	<meta name="yandex-verification" content="" />
+
+	<link href="{{ STATIC_URL }}css/main.css" rel="stylesheet" />
+	<link href="{{ STATIC_URL }}css/normalize.css" rel="stylesheet" />
+	<link href="{{ STATIC_URL }}css/error/error.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="error">
+		<div class="error__inner">
+			<div class="error__wrapper">
+				<div class="error__title">Ошибка 500 — Внутренняя ошибка сервера.</div>
+				<div class="error__text">Попробуйте повторить действие, <a href="#" class="error__link" onClick="window.location.reload()">обновить страницу</a> или перейти <a href="/" class="error__link">на главную страницу</a> сайта.</div>
+				<div class="error__text">При повторении ошибки обратитесь в службу технической поддержки.</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
