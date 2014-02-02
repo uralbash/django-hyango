@@ -30,7 +30,7 @@ Pages
 
 `Error while loading the data from the server.`
 
-![IMAGE](https://ыыы/django-hyango/raw/83970477173377254a912fd97dec3fb4fda171e3/pages_tree.png)
+![IMAGE](http://1.bp.blogspot.com/-u5Kh_1VdH94/Uu49ZdgXBVI/AAAAAAAAA3I/DO2TIPQ9ZrY/s1600/pages_tree.png)
 
 и трэйс:
 
